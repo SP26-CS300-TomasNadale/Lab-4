@@ -1,0 +1,24 @@
+Question 1: Promises vs Async/Await
+
+Promises use .then() and .catch() chains to handle asynchronous results, while async/await lets you write asynchronous code in a more sequential, readable way. 
+In this lab, I found async/await much easier to read and debug because the code looks like normal step-by-step logic instead of nested chains. It also works cleanly with try/catch blocks.
+
+
+Question 2: Error Handling in Async Code
+
+In Exercise 4, I implemented retry logic and used Promise.allSettled to handle multiple asynchronous requests safely. Retry logic attempted a failed HTTP request several times before giving up, 
+and Promise.allSettled allowed the program to collect both successful and failed results without crashing.
+Error handling is more critical in asynchronous code because failures often happen outside the main execution flow — like network errors, timeouts, or invalid responses. 
+Without proper handling, the app could silently fail or hang.
+
+
+Question 3: Data Validation
+
+Validating API data with Joi schemas is important because external data cannot be trusted to always match expected formats. Validation ensures required fields exist and have correct types before the program uses them.
+If validation is skipped, problems could include crashes, undefined values, incorrect calculations, or security risks. It also makes debugging harder because errors appear later instead of at the validation point.
+
+
+Question 4: Working with Real APIs
+
+Working with real APIs was different from using hardcoded data because the responses were not always predictable and took time to return. I had to handle network delays, failures, and inconsistent data structures.
+Challenges included response time variability, failed endpoints, and needing to inspect the returned JSON structure carefully. Unlike hardcoded data, real API data requires defensive coding — checking fields, handling missing values, and catching errors.
